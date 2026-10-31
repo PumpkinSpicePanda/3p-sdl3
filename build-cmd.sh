@@ -148,7 +148,8 @@ case "$AUTOBUILD_PLATFORM" in
             cmake .. -GNinja -DCMAKE_BUILD_TYPE="Release" \
                 -DCMAKE_C_FLAGS="$(remove_cxxstd $opts)" \
                 -DCMAKE_CXX_FLAGS="$opts" \
-                -DCMAKE_INSTALL_PREFIX=$PREFIX_RELEASE
+                -DCMAKE_INSTALL_PREFIX=$PREFIX_RELEASE \
+                -DCMAKE_INSTALL_LIBDIR=lib
 
             cmake --build . --config Release
             cmake --install . --config Release
